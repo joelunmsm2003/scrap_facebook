@@ -1,0 +1,4 @@
+
+
+curl -X POST -u "apikey:D5lT-AFpPZHYl491HI62Nobh1b6_6JlbaB99Xid3_crO" --form "images_file=@preview.mp4.jpg" \
+"https://gateway.watsonplatform.net/visual-recognition/api/v3/classify?version=2018-03-19"
