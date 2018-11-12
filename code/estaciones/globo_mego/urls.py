@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^listausuarios/$', listausuarios),
     url(r'^listaglobo/$', listaglobo),
     url(r'^$', web),
+    url(r'^questions/', PollQuestions.as_view(), name='questions')
 ]

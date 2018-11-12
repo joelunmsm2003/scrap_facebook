@@ -1,13 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+class HelloMessage extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello {this.props.name}
+      </div>
+    );
+  }
 }
 
-const element = <Welcome name="worldoioioooi" />;
 ReactDOM.render(
-  element,
-  document.getElementById('react')
+  <HelloMessage name="Taylor" />,
+  mountNode
 );

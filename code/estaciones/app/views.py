@@ -10,6 +10,22 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.template.defaultfilters import slugify
 
+from django.views import View
+
+class PollQuestions(View):
+	title = "Questions"
+	template = 'questions.html'
+
+	def get(self, request):
+		questions = list(Question.objects.values('pk', 'question_text'))
+
+		context = {
+			'question_text': self.title,
+			'props': questions,
+		}
+
+		return render(request, self.template, context)
+
 
 @receiver(pre_save)
 def my_callback(sender, instance, *args, **kwargs):

@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRS = [
+    (os.path.join(BASE_DIR, 'static')),
+    (os.path.join(BASE_DIR, 'node_modules')),
+]
 
 # Application definition
 
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     'app',
     'rest_framework',
     'webpack_loader',
+    'sass_processor',
 ]
 
 WEBPACK_LOADER = {
@@ -114,7 +119,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/

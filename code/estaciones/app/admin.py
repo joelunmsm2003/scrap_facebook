@@ -15,6 +15,10 @@ import requests
 from django.contrib.admin.filters import DateFieldListFilter
 
 
+@admin.register(Question)
+class QuestionGloboAdmin(admin.ModelAdmin):
+    list_display = ('id','question_text')
+
 
 
 @admin.register(Estado)
